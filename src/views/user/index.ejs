@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head.ejs') %>
+</head>
+
+<body class="bg-slate-100">
+    <div class="flex flex-row justify-between mainContainer bg-slate-100">
+        <%- include ("../partials/sidebar.ejs") %>
+        <div class="mainContain flex flex-col w-full ml-[320px] transition-all ease-in-out duration-500">
+            <div class="navbar flex flex-row h-[72px] mx-5 items-center justify-between">
+                <div class="flex flex-col welcome">
+                    <p class="text-xs font-medium font-base text-navy/60">Selamat Datang,</p>
+                    <h1 class="text-lg font-bold font-base text-navy"><%= user.full_name %></h1>
+                </div>
+                <div class="flex flex-row gap-4">
+                    <div
+                        class="flex flex-row items-center justify-between gap-2 p-2 transition-all duration-500 ease-out bg-white border rounded-full outline-none cursor-pointer search ring-container w-9 h-9 border-slate-200">
+                        <svg id="search-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#999999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                        <input class="ring-content hidden text-[13px] font-base text-navy bg-transparent outline-none transition-all ease-in w-full"
+                        type="text" name="password" id="password" placeholder="Cari sesuatu...">
+                    </div>
+                    <svg class="p-2 bg-white border rounded-full cursor-pointer border-slate-200 h-9 w-9" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#999999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bell"><path d="M10.268 21a2 2 0 0 0 3.464 0"/><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"/></svg>                
+                </div>
+            </div>
+            <hr class="text-slate-300 mx-5 mb-5">
+            <div class="flex flex-col gap-4 mx-5 contain">
+                <div class="flex flex-row w-full gap-2 pb-4 border-b title border-slate-300">
+                    <svg class="border border-slate-200 cursor-pointer rounded-full h-12 w-12 p-[10px]" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 -2 24 28" fill="none" stroke="rgb(57 145 245/.70)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-layout-grid"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>
+                    <div class="flex flex-col">
+                        <h1 class="text-lg font-bold font-base text-navy">Menu Utama</h1>
+                        <p class="text-xs font-medium font-base text-navy/60">Kamu tidak memiliki janji temu sejauh ini</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-3 p-4 gap-4 min-h-96 bg-slate-200/50 rounded-md">
+                    <div class="row-span-3 col-span-4 h-96 flex justify-center items-center">
+                        <p class="text-xs font-medium font-base text-navy/60">Kamu tidak memiliki janji temu sejauh ini</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/js/animate_sidebar.js"></script>
+</body>
+
+</html>

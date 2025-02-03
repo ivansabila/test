@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head.ejs') %>
+</head>
+
+<body class="bg-slate-100">
+    <div class="flex flex-row justify-between mainContainer bg-slate-100">
+        <%- include('../partials/sidebar.ejs') %>
+        <div class="mainContain overflow-auto flex flex-col w-full ml-[320px] transition-all ease-in-out duration-500">
+            <div class="navbar flex flex-row h-[72px] mx-5 items-center justify-between">
+                <div class="flex flex-col welcome">
+                    <p class="text-xs font-medium font-base text-navy/60">Selamat Datang,</p>
+                    <h1 class="text-lg font-bold font-base text-navy">Ivan Adiyatma</h1>
+                </div>
+                <div class="flex flex-row gap-4">
+                    <div
+                        class="flex flex-row items-center justify-between gap-2 p-2 transition-all duration-500 ease-out bg-white border rounded-full outline-none cursor-pointer search ring-container w-9 h-9 border-slate-200">
+                        <svg id="search-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#999999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                        <input class="ring-content hidden text-[13px] font-base text-navy bg-transparent outline-none transition-all ease-in w-full"
+                        type="text" name="password" id="password" placeholder="Cari sesuatu...">
+                    </div>
+                    <svg class="p-2 bg-white border rounded-full cursor-pointer border-slate-200 h-9 w-9" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#999999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bell"><path d="M10.268 21a2 2 0 0 0 3.464 0"/><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"/></svg>                
+                </div>
+            </div>
+            <hr class="mx-5 mb-5 text-slate-300">
+            <div class="flex flex-col gap-4 mx-5 contain">
+                <h1 class="text-lg font-bold font-base text-navy">Riwayat Janji Temu</h1>
+                <div class="flex flex-col gap-4">
+                    <table class="box-border border-collapse table-fixed">
+                        <thead>
+                            <tr>
+                                <th class="text-[13px] font-base font-semibold rounded-l-md bg-slate-200 py-2 text-blueSky w-10">#</th>
+                                <th class="text-[13px] text-left font-base font-semibold text-navy bg-slate-300/30 py-2">Dokter</th>
+                                <th class="text-[13px] text-left font-base font-semibold text-navy bg-slate-300/30 py-2">Spesialis</th>
+                                <th class="text-[13px] text-left font-base font-semibold text-navy bg-slate-300/30 py-2">Waktu</th>
+                                <th class="text-[13px] text-left font-base font-semibold text-navy bg-slate-300/30 py-2">Lokasi</th>
+                                <th class="text-[13px] text-left font-base font-semibold text-navy bg-slate-300/30 py-2">Biaya</th>
+                                <th class="text-[13px] text-left font-base font-semibold text-navy rounded-r-md bg-slate-300/30 py-2">
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-[13px] font-base font-normal py-2 text-blueSky text-center">1</td>
+                                <td class="text-[13px] font-base font-normal text-navy py-2">dr. Steve Jobs</td>
+                                <td class="text-[13px] font-base font-normal text-navy py-2">Penyakit Kulit</td>
+                                <td class="text-[13px] font-base font-normal text-navy py-2">31 Dec 2024, 10 AM</td>
+                                <td class="text-[13px] font-base font-normal text-navy py-2">Rumah Sakit Siloam</td>
+                                <td class="text-[13px] font-base font-normal text-navy py-2">Rp100.000</td>
+                                <td class="text-[13px] font-base font-normal text-navy py-2 "><a
+                                        class="text-[13px] font-base font-semibold text-blueSky underline underline-offset-4 decoration-1 hover:decoration-2"
+                                        href="#">Detail</a></td>
+                            </tr>
+                            <tr>
+                                <td class="text-[13px] font-base font-normal py-2 text-blueSky text-center">1</td>
+                                <td class="text-[13px] font-base font-normal text-navy py-2">dr. Steve Jobs</td>
+                                <td class="text-[13px] font-base font-normal text-navy py-2">Penyakit Kulit</td>
+                                <td class="text-[13px] font-base font-normal text-navy py-2">31 Dec 2024, 10 AM</td>
+                                <td class="text-[13px] font-base font-normal text-navy py-2">Rumah Sakit Siloam</td>
+                                <td class="text-[13px] font-base font-normal text-navy py-2">Rp100.000</td>
+                                <td class="text-[13px] font-base font-normal text-navy py-2 "><a
+                                        class="text-[13px] font-base font-semibold text-blueSky underline underline-offset-4 decoration-1 hover:decoration-2"
+                                        href="#">Detail</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/js/animate_sidebar.js"></script>
+    <script src="/js/responsive_list_doctor.js"></script>
+</body>
+
+</html>

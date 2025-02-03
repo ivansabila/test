@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head.ejs') %>
+</head>
+
+<body class="bg-slate-100">
+    <div class="flex flex-row justify-between mainContainer bg-slate-100">
+        <%- include('../partials/adminSidebar.ejs') %>
+            <div
+                class="mainContain overflow-auto flex flex-col w-full ml-[320px] transition-all ease-in-out duration-500">
+                <div class="navbar flex flex-row h-[72px] mx-5 items-center justify-between">
+                    <div class="flex flex-col welcome">
+                        <p class="text-xs font-medium font-base text-navy/60">Selamat Datang,</p>
+                        <h1 class="text-lg font-bold font-base text-navy">
+                            <%= user.full_name %>
+                        </h1>
+                    </div>
+                    <div class="flex flex-row gap-4">
+                        <svg class="p-2 bg-white border rounded-full cursor-pointer border-slate-200 h-9 w-9"
+                            xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="#999999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-bell">
+                            <path d="M10.268 21a2 2 0 0 0 3.464 0" />
+                            <path
+                                d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326" />
+                        </svg>
+                    </div>
+                </div>
+                <hr class="mx-5 mb-5 text-slate-300">
+                <div class="flex flex-col gap-4 mx-5 contain">
+                    <div class="flex flex-row w-full gap-2 pb-4 border-b title border-slate-300">
+                        <svg class="border border-slate-200 cursor-pointer rounded-full h-12 w-12 p-[10px]"
+                            xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 -2 24 28" fill="none"
+                            stroke="rgb(57 145 245/.70)" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round" class="lucide lucide-stethoscope">
+                            <path d="M11 2v2" />
+                            <path d="M5 2v2" />
+                            <path d="M5 3H4a2 2 0 0 0-2 2v4a6 6 0 0 0 12 0V5a2 2 0 0 0-2-2h-1" />
+                            <path d="M8 15a6 6 0 0 0 12 0v-3" />
+                            <circle cx="20" cy="10" r="2" />
+                        </svg>
+                        <div class="flex flex-col">
+                            <h1 class="text-lg font-bold font-base text-navy">Dokter</h1>
+                            <p class="text-xs font-medium font-base text-navy/60">Kamu tidak memiliki janji temu sejauh
+                                ini</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col h-full gap-6 mb-1">
+                        <form class="flex flex-col gap-2 w-full" action="" method="post">
+                            <div class="name flex flex-col gap-1">
+                                <label class="text-sm font-semibold text-navy" for="username">Nama Lengkap</label>
+                                <input
+                                    class="border text-sm font-base text-navy bg-transparent outline-none rounded-md h-10 px-4 transition-all ease-in <% if (errors.username) { %> border-red-500 <% } else { %> border-slate-200 <% } %> focus:outline-blueSky/50 focus:outline-[3px]"
+                                    type="text" name="username" id="username"
+                                    placeholder="Masukkan Nama Beserta Gelar Kedokteran" required autocomplete="off"
+                                    autofocus value="<%= oldData.username%>">
+                                <p class="text-xs font-base font-medium text-red-500 leading-4">
+                                    <%= errors.username %>
+                                </p>
+                            </div>
+                            <div class="email flex flex-col gap-1">
+                                <label class="text-sm font-semibold text-navy" for="email">Email</label>
+                                <input
+                                    class="border text-sm font-base text-navy bg-transparent outline-none rounded-md h-10 px-4 transition-all ease-in <% if (errors.email) { %> border-red-500 <% } else { %> border-slate-200 <% } %> focus:outline-blueSky/50 focus:outline-[3px]"
+                                    type="email" name="email" id="email" placeholder="Masukkan Email" required
+                                    autocomplete="off" autofocus value="<%= oldData.email%>">
+                                <p class="text-xs font-base font-medium text-red-500 leading-4">
+                                    <%= errors.email %>
+                                </p>
+                            </div>
+                            <div class="phone flex flex-col gap-1">
+                                <label class="text-sm font-semibold text-navy" for="phone">Nomor HP</label>
+                                <input
+                                    class="border text-sm font-base text-navy bg-transparent outline-none rounded-md h-10 px-4 transition-all ease-in <% if (errors.phone) { %> border-red-500 <% } else { %> border-slate-200 <% } %> focus:outline-blueSky/50 focus:outline-[3px]"
+                                    type="text" name="phone" id="phone" placeholder="Masukkan Nomor HP" required
+                                    autocomplete="off" autofocus value="<%= oldData.phone%>">
+                                <p class="text-xs font-base font-medium text-red-500 leading-4">
+                                    <%= errors.phone %>
+                                </p>
+                            </div>
+                            <div class="password flex flex-col gap-1">
+                                <label class="text-sm font-semibold text-navy" for="password">Password</label>
+                                <input
+                                    class="border text-sm font-base text-navy bg-transparent outline-none rounded-md h-10 px-4 transition-all ease-in <% if (errors.password) { %> border-red-500 <% } else { %> border-slate-200 <% } %> focus:outline-blueSky/50 focus:outline-[3px]"
+                                    type="password" name="password" id="password" placeholder="Minimal 8 Karakter" required
+                                    autocomplete="off" autofocus value="<%= oldData.password%>">
+                                <p class="text-xs font-base font-medium text-red-500 leading-4">
+                                    <%= errors.password %>
+                                </p>
+                            </div>
+                            <button
+                                class="text-sm font-medium font-base text-white bg-blueSky outline-none rounded-md h-10 px-4 mt-4 transition-all ease-in hover:bg-blue-500 active:bg-blue-600 focus:outline-[3px] focus:outline-blueSky/50"
+                                type="submit">Buat Akun</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <script src="/js/animate_sidebar.js"></script>
+    <script src="/js/responsive_list_doctor.js"></script>
+    <script src="/js/ring_input.js"></script>
+    <script src="/js/animate_search_input.js"></script>
+</body>
+
+</html>

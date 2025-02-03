@@ -1,0 +1,27 @@
+-- Buat FUNCTION untuk update
+CREATE OR REPLACE FUNCTION update_timestamp()
+RETURNS TRIGGER AS $$
+BEGIN
+    NEW.updated_at = CURRENT_TIMESTAMP;
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+-- Buat TRIGGER di tabel users
+CREATE TRIGGER trigger_update_timestamp
+BEFORE UPDATE ON users
+FOR EACH ROW
+EXECUTE FUNCTION update_timestamp();
+
+-- Buat TABLE dengan TIMESTAMP
+CREATE TABLE users (
+	id SERIAL PRIMARY KEY,
+	full_name VARCHAR(100),
+	email VARCHAR(50),
+	phone VARCHAR(12),
+	password VARCHAR(100),
+	image VARCHAR(225),
+	role VARCHAR(50),
+	created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+)

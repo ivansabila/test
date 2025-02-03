@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head.ejs') %>
+</head>
+
+<body class="bg-slate-100">
+    <div class="flex flex-row justify-between mainContainer bg-slate-100">
+        <%- include('../partials/adminSidebar.ejs') %>
+            <div
+                class="mainContain overflow-auto flex flex-col w-full ml-[320px] transition-all ease-in-out duration-500">
+                <div class="navbar flex flex-row h-[72px] mx-5 items-center justify-between">
+                    <div class="flex flex-col welcome">
+                        <p class="text-xs font-medium font-base text-navy/60">Selamat Datang,</p>
+                        <h1 class="text-lg font-bold font-base text-navy">
+                            <%= user.full_name %>
+                        </h1>
+                    </div>
+                    <div class="flex flex-row gap-4">
+                        <svg class="p-2 bg-white border rounded-full cursor-pointer border-slate-200 h-9 w-9"
+                            xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="#999999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-bell">
+                            <path d="M10.268 21a2 2 0 0 0 3.464 0" />
+                            <path
+                                d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326" />
+                        </svg>
+                    </div>
+                </div>
+                <hr class="mx-5 mb-5 text-slate-300">
+                <div class="flex flex-col gap-4 mx-5 contain">
+                    <div class="flex flex-row w-full gap-2 pb-4 border-b title border-slate-300">
+                        <svg class="border border-slate-200 cursor-pointer rounded-full h-12 w-12 p-[10px]"
+                            xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 -2 24 28" fill="none"
+                            stroke="rgb(57 145 245/.70)" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round" class="lucide lucide-stethoscope">
+                            <path d="M11 2v2" />
+                            <path d="M5 2v2" />
+                            <path d="M5 3H4a2 2 0 0 0-2 2v4a6 6 0 0 0 12 0V5a2 2 0 0 0-2-2h-1" />
+                            <path d="M8 15a6 6 0 0 0 12 0v-3" />
+                            <circle cx="20" cy="10" r="2" />
+                        </svg>
+                        <div class="flex flex-col">
+                            <h1 class="text-lg font-bold font-base text-navy">Dokter</h1>
+                            <p class="text-xs font-medium font-base text-navy/60">Kamu tidak memiliki janji temu sejauh
+                                ini</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col h-full gap-6">
+                        <a class="group text-[13px] font-base font-medium text-navy border border-slate-300 rounded-md py-[6px] px-4 w-fit flex flex-row items-center gap-2 delay-100 transition-all ease-in hover:bg-blueSky hover:text-white"
+                            href="/admin/doctor-list/add">
+                            <svg class="delay-100 transition-all ease-in group-hover:stroke-white"
+                                xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="#999999" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-plus">
+                                <path d="M5 12h14" />
+                                <path d="M12 5v14" />
+                            </svg>
+                            Tambah Dokter
+                        </a>
+                        <div class="flex flex-col gap-4 appointmentList">
+                            <table class="box-border border-collapse table-fixed">
+                                <thead>
+                                    <tr>
+                                        <th
+                                            class="text-[13px] font-base font-semibold rounded-l-md bg-slate-200/35 py-2 text-blueSky w-10">
+                                            #</th>
+                                        <th
+                                            class="text-[13px] text-left font-base font-semibold text-navy bg-slate-200/35 py-2">
+                                            Nama Lengkap</th>
+                                        <th
+                                            class="text-[13px] text-left font-base font-semibold text-navy bg-slate-200/35 py-2">
+                                            Email</th>
+                                        <th
+                                            class="text-[13px] text-left font-base font-semibold text-navy bg-slate-200/35 py-2">
+                                            Nomor HP</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="text-[13px] font-base font-normal py-2 text-blueSky text-center">1
+                                        </td>
+                                        <td
+                                            class="text-[13px] font-base font-normal text-navy py-2 flex flex-row items-center gap-2">
+                                            <img class="object-cover rounded-full w-7 h-7"
+                                                src="/images/img/img_gradient.png" alt="">
+                                            <p>John Doe</p>
+                                        </td>
+                                        <td class="text-[13px] font-base font-normal text-navy py-2">john@gmail.com</td>
+                                        <td class="text-[13px] font-base font-normal text-navy py-2">082343544321</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <script src="/js/animate_sidebar.js"></script>
+    <script src="/js/responsive_list_doctor.js"></script>
+    <script src="/js/ring_input.js"></script>
+    <script src="/js/animate_search_input.js"></script>
+</body>
+
+</html>

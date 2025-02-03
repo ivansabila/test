@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head.ejs') %>
+</head>
+
+<body class="bg-slate-100">
+    <div class="flex flex-row justify-between mainContainer bg-slate-100">
+        <%- include('../partials/sidebar.ejs') %>
+            <div
+                class="mainContain overflow-auto flex flex-col w-full ml-[320px] transition-all ease-in-out duration-500">
+                <div class="navbar flex flex-row h-[72px] mx-5 items-center justify-between">
+                    <div class="flex flex-col welcome">
+                        <p class="text-xs font-medium font-base text-navy/60">Selamat Datang,</p>
+                        <h1 class="text-lg font-bold font-base text-navy">Ivan Adiyatma</h1>
+                    </div>
+                    <div class="flex flex-row gap-4">
+                        <div
+                            class="flex flex-row items-center justify-between gap-2 p-2 transition-all duration-500 ease-out bg-white border rounded-full outline-none cursor-pointer search ring-container w-9 h-9 border-slate-200">
+                            <svg id="search-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                viewBox="0 0 24 24" fill="none" stroke="#999999" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search">
+                                <circle cx="11" cy="11" r="8" />
+                                <path d="m21 21-4.3-4.3" />
+                            </svg>
+                            <input
+                                class="ring-content hidden text-[13px] font-base text-navy bg-transparent outline-none transition-all ease-in w-full"
+                                type="text" name="password" id="password" placeholder="Cari sesuatu...">
+                        </div>
+                        <svg class="p-2 bg-white border rounded-full cursor-pointer border-slate-200 h-9 w-9"
+                            xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="#999999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-bell">
+                            <path d="M10.268 21a2 2 0 0 0 3.464 0" />
+                            <path
+                                d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326" />
+                        </svg>
+                    </div>
+                </div>
+                <hr class="mx-5 mb-5 text-slate-300">
+                <div class="flex flex-col gap-4 mx-5 contain">
+                    <div class="flex flex-row items-center justify-between">
+                        <div class="welcome flex flex-row items-center gap-4">
+                            <h1 class="text-lg font-bold font-base text-navy">Janji Temu</h1>
+                            <p class="text-xs font-medium font-base text-navy/60">#DOA342I12</p>
+                        </div>
+                        <div class="flex flex-row gap-2">
+                            <a class="group text-[13px] font-base font-medium text-navy border border-slate-300 rounded-md py-[6px] px-4 w-fit flex flex-row items-center gap-2 delay-100 transition-all ease-in hover:bg-blueSky hover:text-white"
+                                href="#">
+                                <svg class="delay-100 transition-all ease-in group-hover:stroke-white" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#999999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-credit-card"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>
+                                Pembayaran
+                            </a>
+                            <a class="group text-[13px] font-base font-medium text-navy border border-slate-300 rounded-md py-[6px] px-4 w-fit flex flex-row items-center gap-2 delay-100 transition-all ease-in hover:bg-blueSky hover:text-white"
+                                href="#">
+                                <svg class="delay-100 transition-all ease-in group-hover:stroke-white" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#999999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-pencil"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/><path d="m15 5 4 4"/></svg>
+                                Edit Janji Temu
+                            </a>
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-center h-full gap-4">
+                        <div class="appointment-image w-full flex flex-row justify-center items-center">
+                            <img class="w-28 h-28 border border-slate-300 rounded-full object-cover"
+                                src="/images/img/img_face.jpg" alt="">
+                            <hr class="text-slate-900 border border-slate-500 border-dashed w-2/12">
+                            <div class="flex flex-col px-3">
+                                <p class="w-fit rounded-full text-sm text-navy font-medium bg-[#A0FFA0] px-2 py-[2px]">
+                                    Menunggu</p>
+                            </div>
+                            <hr class="text-slate-900 border border-slate-500 border-dashed w-2/12">
+                            <img class="w-28 h-28 border border-slate-300 rounded-full object-cover"
+                                src="/images/img/img_face.jpg" alt="">
+                        </div>
+                        <div class="appointment-container flex flex-col w-1/2 gap-2">
+                            <div class="appointment-container flex flex-col items-center">
+                                <h1 class="text-lg font-bold font-base text-navy">dr. Anugrah Maibara S.Ked M.Ked</h1>
+                                <p class="text-sm font-medium font-base text-navy/60">Spesialis Penyakit Dalam</p>
+                            </div>
+                            <div class="appointment-details flex flex-col divide-y divide-slate-300">
+                                <div class="patient flex flex-row justify-between py-2">
+                                    <h1 class="text-base font-bold font-base text-navy">Pasien</h1>
+                                    <p class="text-sm font-medium font-base text-navy/60">Ivan Adiyatma Sabila</p>
+                                </div>
+                                <div class="code flex flex-row justify-between py-2">
+                                    <h1 class="text-sm font-medium font-base text-navy">ID</h1>
+                                    <p class="text-sm font-medium font-base text-navy/60">DOA342I12</p>
+                                </div>
+                                <div class="time flex flex-row justify-between py-2">
+                                    <h1 class="text-sm font-medium font-base text-navy">Jadwal Janji Temu</h1>
+                                    <p class="text-sm font-medium font-base text-navy/60">31 Dec 2024, 10:00</p>
+                                </div>
+                                <div class="place flex flex-row justify-between py-2">
+                                    <h1 class="text-sm font-medium font-base text-navy">Tempat Janji Temu</h1>
+                                    <p class="text-sm font-medium font-base text-navy/60">Rumah Sakit Siloam</p>
+                                </div>
+                                <div class="total flex flex-row justify-between py-2">
+                                    <h1 class="text-sm font-medium font-base text-navy">Jumlah</h1>
+                                    <p class="text-sm font-medium font-base text-navy/60">1 orang</p>
+                                </div>
+                                <div class="order flex flex-row justify-between py-2">
+                                    <h1 class="text-sm font-medium font-base text-navy">Dipesan pada</h1>
+                                    <p class="text-sm font-medium font-base text-navy/60">22 Nov 2024</p>
+                                </div>
+                                <div class="status flex flex-row justify-between py-2">
+                                    <h1 class="text-sm font-medium font-base text-navy">Status</h1>
+                                    <p
+                                        class="w-fit rounded-full text-sm text-navy font-medium bg-[#A0FFA0] px-2 py-[2px]">
+                                        Menunggu</p>
+                                </div>
+                                <div class="price flex flex-row justify-between py-2">
+                                    <h1 class="text-sm font-medium font-base text-navy">Biaya</h1>
+                                    <p class="text-sm font-medium font-base text-navy/60">Rp100.000</p>
+                                </div>
+                            </div>
+                            <div class="payment flex flex-col gap-1">
+                                <p class="text-xs font-base font-medium text-navy/60 leading-4">Perubahan Jadwal Janji Temu dapat dilakukan sebelum Status Disetujui</p>
+                                <p class="text-xs font-base font-medium text-navy/60 leading-4">Batas waktu pembayaran sampai H-2 (2x24 jam) sebelum Jadwal Janji Temu</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <script src="/js/animate_sidebar.js"></script>
+    <script src="/js/responsive_list_doctor.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<div class="sidebar w-[320px] h-full flex flex-col border-r justify-between border-slate-300 transition-all ease-in-out duration-500 bg-slate-100 fixed top-0 left-0 ">
+    <div class="flex flex-col">
+        <div class="heading flex flex-row justify-between items-center mx-5 h-[72px]">
+            <a class="flex flex-row items-center justify-center gap-2 cursor-pointer logo" title="HealthGate">
+                <img class="object-cover w-9 h-9" src="/images/img/img_logo.png" alt="">
+                <h1 class="text-lg font-bold text-center titleSidebar font-base text-navy ">HealthGate</h1>
+            </a>
+            <svg id="toggleSidebar" class="relative w-6 h-6 p-[2px] cursor-pointer rounded-md transition-all ease-out hover:bg-blueSky hover:stroke-white" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#999999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevrons-left-right"><path d="m9 7-5 5 5 5"/><path d="m15 7 5 5-5 5"/></svg>
+        </div>
+        <hr class="mx-5 mb-5 text-slate-300">
+        <a class="relative flex flex-row items-center justify-between gap-4 p-2 mx-5 my-1 transition-all ease-out rounded-md cursor-pointer itemSidebar dashboard group <%= activeRoute === "dashboard" ? "bg-slate-200" : "hover:bg-slate-200/50" %>" title="Menu Utama" href="/">
+            <div class="absolute <%= activeRoute === "dashboard" ? "" : "hidden" %> w-2 h-4/6 bg-blueSky rounded-r-[4px] top-1/2 -left-[19px] -translate-x-1/2 -translate-y-1/2"></div>
+            <div class="flex flex-row items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="<%= activeRoute === "dashboard" ? "#3991F5" : "#999999" %>" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-layout-grid"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>
+                <p class="titleItemSidebar font-base <%= activeRoute === "dashboard" ? "font-bold" : "font-medium" %> text-[13px] text-center leading-5 text-navy">Menu Utama</p>
+            </div>
+            <img class="w-4 h-4 iconItemSidebar <%= activeRoute === "dashboard" ? "" : "opacity-0 group-hover:opacity-100" %>" src="/images/icons/ic_arrow_right.svg" alt="">
+        </a>
+        <a class="relative flex flex-row items-center justify-between gap-4 p-2 mx-5 my-1 transition-all ease-out rounded-md cursor-pointer itemSidebar appointment group  <%= activeRoute === "appointment" ? "bg-slate-200" : "hover:bg-slate-200/50" %>" title="Janji Temu" href="/appointments">
+            <div class="absolute <%= activeRoute === "appointment" ? "" : "hidden" %> w-2 h-4/6 bg-blueSky rounded-r-[4px] top-1/2 -left-[18px] -translate-x-1/2 -translate-y-1/2"></div>
+            <div class="flex flex-row items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="<%= activeRoute === "appointment" ? "#3991F5" : "#999999" %>" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-hospital"><path d="M12 6v4"/><path d="M14 14h-4"/><path d="M14 18h-4"/><path d="M14 8h-4"/><path d="M18 12h2a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-9a2 2 0 0 1 2-2h2"/><path d="M18 22V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v18"/></svg>
+                <p class="titleItemSidebar font-base <%= activeRoute === "appointment" ? "font-bold" : "font-medium" %> text-[13px] text-center leading-5 text-navy">Janji Temu</p>
+            </div>
+            <img class="w-4 h-4 iconItemSidebar <%= activeRoute === "appointment" ? "" : "opacity-0 group-hover:opacity-100" %>" src="/images/icons/ic_arrow_right.svg" alt="">
+        </a>
+        <a class="relative flex flex-row items-center justify-between gap-4 p-2 mx-5 my-1 transition-all ease-out rounded-md cursor-pointer itemSidebar activity group hover:bg-slate-200/50" title="Aktivitas">
+            <div class="absolute hidden w-2 h-4/6 bg-blueSky rounded-r-[4px] top-1/2 -left-[18px] -translate-x-1/2 -translate-y-1/2"></div>
+            <div class="flex flex-row items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#999999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-activity"><path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"/></svg>
+                <p class="titleItemSidebar font-base font-medium text-[13px] text-center leading-5 text-navy">Aktivitas</p>
+            </div>
+            <img class="w-4 h-4 opacity-0 iconItemSidebar group-hover:opacity-100" src="/images/icons/ic_arrow_right.svg" alt="">
+        </a>
+        <a class="relative flex flex-row items-center justify-between gap-4 p-2 mx-5 my-1 transition-all ease-out rounded-md cursor-pointer itemSidebar calendar group hover:bg-slate-200/50" title="Kalender">
+            <div class="absolute hidden w-2 h-4/6 bg-blueSky rounded-r-[4px] top-1/2 -left-[18px] -translate-x-1/2 -translate-y-1/2"></div>
+            <div class="flex flex-row items-center justify-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#999999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>
+                <p class="titleItemSidebar font-base font-medium text-[13px] text-center leading-5 text-navy">Kalender</p>
+            </div>
+            <img class="w-4 h-4 opacity-0 iconItemSidebar group-hover:opacity-100" src="/images/icons/ic_arrow_right.svg" alt="">
+        </a>
+    </div>
+    <div class="flex flex-col">
+        <form class="flex flex-col w-full" action="/login/logout" method="post">
+            <button class="relative flex flex-row items-center justify-between gap-4 p-2 mx-5 my-1 transition-all ease-out rounded-md cursor-pointer itemSidebar logout group hover:bg-slate-200/50" type="submit">
+                <div class="flex flex-row items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#999999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-log-out"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" x2="9" y1="12" y2="12"/></svg>
+                    <p class="titleItemSidebar font-base font-medium text-[13px] text-center leading-5 text-navy/75">Keluar</p>
+                </div>
+                <img class="w-4 h-4 opacity-0 iconItemSidebar group-hover:opacity-100" src="/images/icons/ic_arrow_right.svg" alt="">
+            </button>
+        </form>
+        <a class="flex flex-row items-center justify-between h-20 mx-5 mt-5 border-t cursor-pointer footer group border-slate-300" href="/profile/<%= user.id %>">
+            <div class="flex flex-row items-center justify-center gap-2 profile">
+                <img class="object-cover border rounded-full w-9 h-9 border-slate-300 bg-blueSky" src="<%= user.image %>" alt="">
+                <div class="profileSidebar flex flex-col gap-[2px]">
+                    <h1 class="text-xs font-semibold font-base text-navy"><%= user.full_name %></h1>
+                    <p class="text-[10px] font-base font-normal text-navy/60"><%= user.email %></p>
+                </div>
+            </div>
+            <svg class="iconProfileSidebar w-6 h-6 p-[2px] cursor-pointer rounded-md transition-all ease-out group-hover:bg-blueSky group-hover:stroke-white" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#999999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right"><path d="m9 18 6-6-6-6"/></svg>
+        </a>
+    </div>
+</div>
